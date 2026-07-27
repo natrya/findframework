@@ -5,8 +5,7 @@
 `findframework.sh` adalah script reconnaissance untuk memetakan **subdomain** dan
 melakukan **fingerprinting framework/teknologi web** dari sebuah domain target.
 Alur kerjanya pasif dulu (enumerasi subdomain dari sumber OSINT), lalu aktif
-(memeriksa host yang hidup dan mengidentifikasi teknologinya). Cocok untuk tahap
-awal pentest domain pemerintah (`.go.id`).
+(memeriksa host yang hidup dan mengidentifikasi teknologinya). 
 
 > ⚠️ **Peringatan legal.** Tahap fingerprinting aktif (whatweb, nuclei, wafw00f)
 > mengirim request langsung ke server target. Jalankan **hanya** terhadap domain
