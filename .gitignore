@@ -1,0 +1,12 @@
+# Hasil scan tiap engagement — jangan pernah di-commit
+output/
+results/
+
+# Backup & konfigurasi API key subfinder (rahasia)
+provider-config.yaml
+*.bak.*
+
+# Berkas sementara / editor
+*.tmp
+*.swp
+.DS_Store
