@@ -120,7 +120,7 @@ ter-commit ke git secara tidak sengaja.
 
 | Opsi | Wajib? | Default | Keterangan |
 |------|--------|---------|------------|
-| `-d <domain>` | **Ya** | — | Domain target, mis. `pekalongankab.go.id` |
+| `-d <domain>` | **Ya** | — | Domain target, mis. `contoh.go.id` |
 | `-o <outdir>` | Tidak | `./output/<domain>_<timestamp>` | Folder output kustom |
 | `-r <rps>` | Tidak | `100` | Rate limit (request per detik) untuk httpx & nuclei |
 | `-p` | Tidak | mati | Mode **pasif saja**: lewati whatweb/nuclei/wafw00f |
@@ -133,25 +133,25 @@ ter-commit ke git secara tidak sengaja.
 **1. Scan standar (pasif + aktif), rate default:**
 
 ```bash
-./findframework.sh -d pekalongankab.go.id
+./findframework.sh -d contoh.go.id
 ```
 
 **2. Folder output khusus untuk arsip engagement:**
 
 ```bash
-./findframework.sh -d pekalongankab.go.id -o ./pekalongankab/recon-2026
+./findframework.sh -d contoh.go.id -o ./contoh/recon-2026
 ```
 
 **3. Mode pasif saja (paling aman — tidak melakukan fingerprint aktif):**
 
 ```bash
-./findframework.sh -d pekalongankab.go.id -p
+./findframework.sh -d contoh.go.id -p
 ```
 
 **4. Target pemerintah — rate limit rendah supaya tidak membebani server:**
 
 ```bash
-./findframework.sh -d pekalongankab.go.id -r 20 -o ./pekalongankab/recon-2026
+./findframework.sh -d contoh.go.id -r 20 -o ./contoh/recon-2026
 ```
 
 ---
