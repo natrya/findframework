@@ -10,7 +10,7 @@ Alur kerjanya pasif dulu (enumerasi subdomain dari sumber OSINT), lalu aktif
 > ⚠️ **Peringatan legal.** Tahap fingerprinting aktif (whatweb, nuclei, wafw00f)
 > mengirim request langsung ke server target. Jalankan **hanya** terhadap domain
 > yang Anda punya izin/otorisasi tertulis untuk diuji. Untuk domain pemerintah,
-> gunakan rate limit rendah dan mode sekuensial (lihat bagian *Tips target `.go.id`*).
+> gunakan rate limit rendah dan mode sekuensial (lihat bagian *Tips target `.id`*).
 
 ---
 
@@ -23,7 +23,7 @@ Alur kerjanya pasif dulu (enumerasi subdomain dari sumber OSINT), lalu aktif
 - [Opsi Command-line](#opsi-command-line)
 - [Contoh Penggunaan](#contoh-penggunaan)
 - [File Output](#file-output)
-- [Tips Target `.go.id`](#tips-target-goid)
+- [Tips Target `.id`](#tips-target-goid)
 - [Konfigurasi API Key](#konfigurasi-api-key)
 - [Troubleshooting](#troubleshooting)
 
@@ -106,11 +106,11 @@ output/             # hasil scan tiap run (dibuat otomatis, tidak di-commit)
 Bentuk paling dasar — hanya wajib memberi domain target dengan `-d`:
 
 ```bash
-./findframework.sh -d contoh.go.id
+./findframework.sh -d contoh.id
 ```
 
 Script akan membuat folder output otomatis di
-`./output/contoh.go.id_<tanggal>_<jam>/` dan menaruh **semua** hasil di sana.
+`./output/contoh.id_<tanggal>_<jam>/` dan menaruh **semua** hasil di sana.
 Folder `output/` sudah masuk `.gitignore`, jadi hasil scan tidak akan
 ter-commit ke git secara tidak sengaja.
 
@@ -120,7 +120,7 @@ ter-commit ke git secara tidak sengaja.
 
 | Opsi | Wajib? | Default | Keterangan |
 |------|--------|---------|------------|
-| `-d <domain>` | **Ya** | — | Domain target, mis. `contoh.go.id` |
+| `-d <domain>` | **Ya** | — | Domain target, mis. `contoh.id` |
 | `-o <outdir>` | Tidak | `./output/<domain>_<timestamp>` | Folder output kustom |
 | `-r <rps>` | Tidak | `100` | Rate limit (request per detik) untuk httpx & nuclei |
 | `-p` | Tidak | mati | Mode **pasif saja**: lewati whatweb/nuclei/wafw00f |
@@ -133,25 +133,25 @@ ter-commit ke git secara tidak sengaja.
 **1. Scan standar (pasif + aktif), rate default:**
 
 ```bash
-./findframework.sh -d contoh.go.id
+./findframework.sh -d contoh.id
 ```
 
 **2. Folder output khusus untuk arsip engagement:**
 
 ```bash
-./findframework.sh -d contoh.go.id -o ./contoh/recon-2026
+./findframework.sh -d contoh.id -o ./contoh/recon-2026
 ```
 
 **3. Mode pasif saja (paling aman — tidak melakukan fingerprint aktif):**
 
 ```bash
-./findframework.sh -d contoh.go.id -p
+./findframework.sh -d contoh.id -p
 ```
 
 **4. Target pemerintah — rate limit rendah supaya tidak membebani server:**
 
 ```bash
-./findframework.sh -d contoh.go.id -r 20 -o ./contoh/recon-2026
+./findframework.sh -d contoh.id -r 20 -o ./contoh/recon-2026
 ```
 
 ---
@@ -179,7 +179,7 @@ dan daftar teknologi unik yang ditemukan.
 
 ---
 
-## Tips Target `.go.id`
+## Tips Target `.id`
 
 Untuk domain pemerintah, kehati-hatian lebih penting daripada kecepatan:
 
@@ -205,7 +205,7 @@ Shodan, GitHub, dll). Tanpa key, hanya sumber gratisan yang berjalan.
 Cek cepat sumber mana yang aktif vs. dilewati:
 
 ```bash
-subfinder -d contoh.go.id -all -stats -v
+subfinder -d contoh.id -all -stats -v
 ```
 
 ---
